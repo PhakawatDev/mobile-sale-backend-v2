@@ -1,0 +1,37 @@
+Create Project
+mkdir express-ts && cd express-ts
+npm init -y
+# runtime
+npm i express
+
+# types + TypeScript toolchain
+npm i -D typescript @types/node @types/express
+
+# dev runner 
+npm i -D ts-node nodemon        
+
+# git
+git init
+git add .
+git commit -m "api"
+git remote add origin https://github.com/PhakawatDev/mobile-sale-backend.git
+git push --set-upstream origin main
+
+# Prisma
+npx prisma generate
+npx prisma db push
+
+
+### Dockerfile
+# create images
+docker build -t APP_NAME:APP_VERSION .
+docker build -t my-express-api .
+
+# รันคอนเทนเนอร์
+docker run --rm -p 3001:3001 --env-file .env my-express-api
+# หรือกำหนด DATABASE_URL ตรง ๆ
+# docker run --rm -p 3001:3001 -e DATABASE_URL="mongodb+srv://..." my-express-api
+
+docker ps
+docker stop APP_NAME
+docker rm APP_NAME
