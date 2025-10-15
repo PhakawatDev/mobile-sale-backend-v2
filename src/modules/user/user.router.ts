@@ -1,16 +1,16 @@
 import { Router } from 'express';
 import { UserController } from './user.controller';
 
-const userCtrl = new UserController();
+const userController = new UserController();
 
 const userRouter = Router();
 
-// userRouter.post("/signin", UserController.signIn);
-// userRouter.get("/info", UserController.info);
-// userRouter.put("/update", UserController.update);
-// userRouter.get("/list", UserController.list);
-// userRouter.post("/create", UserController.create);
-// userRouter.put("/update/:id", UserController.updateRow);
-// userRouter.delete("/remove/:id", UserController.remove);
+userRouter.post("/signin", userController.signIn);
+userRouter.get("/info", userController.info);
+userRouter.put("/update", userController.update);
+userRouter.get("/list", userController.list);
+userRouter.post("/create", userController.create);
+userRouter.put("/update/:id", userController.updateRow);
+userRouter.delete("/remove/:id", userController.remove);
 
 export default userRouter ;

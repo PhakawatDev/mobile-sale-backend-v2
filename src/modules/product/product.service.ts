@@ -12,7 +12,7 @@ export class ProductService {
     private readonly repo: ProductRepository;
 
     constructor() {
-        this.repo = new ProductRepository(prisma);
+        this.repo = new ProductRepository();
     }
 
     async createProduct(payload: ProductInput) {

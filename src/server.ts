@@ -1,6 +1,8 @@
 import { buildApp } from './app';
 import { config } from './config';
+import dotenv from "dotenv";
 
+dotenv.config();
 const app = buildApp();
 const port = config.app.port;
 
